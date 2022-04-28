@@ -27,4 +27,16 @@ function markupElementGallery({ preview, original, description }) {
 }
 markupGallery(galleryItems);
 
+//======== Delegation and getting the url of a large image ==========
+
+const urlLargeImage = refs.divGallery.addEventListener("click", (event) => {
+  if (event.target.nodeName !== "IMG") {
+    return;
+  }
+  event.preventDefault();
+  const { dataset } = event.target;
+  console.log(dataset.source);
+  return dataset.source;
+});
+
 console.log(galleryItems);
