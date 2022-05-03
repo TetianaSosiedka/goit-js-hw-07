@@ -5,7 +5,7 @@ const refs = {
   divGallery: document.querySelector(".gallery"),
 };
 //======== Creating and rendering gallery ==========
-function markupGallery(galleryItems) {
+function markupGallery() {
   galleryItems.map((galleryItem) => {
     refs.divGallery.insertAdjacentHTML(
       "beforeend",
@@ -25,7 +25,7 @@ function markupElementGallery({ preview, original, description }) {
   </a>
 </div>`;
 }
-markupGallery(galleryItems);
+markupGallery();
 
 //===================================================================
 
