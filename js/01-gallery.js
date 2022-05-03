@@ -27,16 +27,29 @@ function markupElementGallery({ preview, original, description }) {
 }
 markupGallery(galleryItems);
 
-//======== Delegation and getting the url of a large image ==========
+//===================================================================
 
-const urlLargeImage = refs.divGallery.addEventListener("click", (event) => {
+refs.divGallery.addEventListener("click", (event) => {
   if (event.target.nodeName !== "IMG") {
     return;
   }
+  const UrlLargeImage = takeUrlLargeImage(event); //Delegation and getting the url of a large image
+  oupenModalWindow(UrlLargeImage); // oupen modal window with img
+});
+
+function takeUrlLargeImage(event) {
   event.preventDefault();
   const { dataset } = event.target;
   console.log(dataset.source);
   return dataset.source;
-});
+}
+
+function oupenModalWindow(url) {
+  const instance = basicLightbox.create(`
+    <img src="${url}" width="800" height="600">
+`);
+
+  instance.show();
+}
 
 console.log(galleryItems);
