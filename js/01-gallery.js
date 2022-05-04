@@ -4,7 +4,7 @@ import { galleryItems } from "./gallery-items.js";
 const refs = {
   divGallery: document.querySelector(".gallery"),
 };
-//======== Creating and rendering gallery ==========
+//============================================================
 function markupGallery() {
   galleryItems.map((galleryItem) => {
     refs.divGallery.insertAdjacentHTML(
@@ -25,9 +25,10 @@ function markupElementGallery({ preview, original, description }) {
   </a>
 </div>`;
 }
-markupGallery();
 
-//===================================================================
+markupGallery(); //Creating and rendering gallery
+
+//============================================================
 
 refs.divGallery.addEventListener("click", (event) => {
   if (event.target.nodeName !== "IMG") {
@@ -48,7 +49,6 @@ function oupenModalWindow(url) {
   const instance = basicLightbox.create(`
     <img src="${url}" width="800" height="600">
 `);
-
   instance.show();
 }
 
