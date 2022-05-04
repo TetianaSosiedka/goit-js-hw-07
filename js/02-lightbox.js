@@ -20,11 +20,10 @@ function markupElementGallery({ preview, original, description }) {
 }
 //===============================================
 function oupenModalWindow() {
-  let gallery = new SimpleLightbox(".gallery a", {
+  new SimpleLightbox(".gallery a", {
     captionsData: "alt",
     captionDelay: 250,
   });
-  gallery.refresh();
 }
 
 markupGallery(); //Creating and rendering gallery
